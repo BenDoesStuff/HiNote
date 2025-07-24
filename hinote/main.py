@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -15,9 +16,16 @@ if not API_TOKEN:
     )
 MUSIC_DIR = os.getenv("MUSIC_DIR", "music")
 
+BASE_DIR = Path(__file__).resolve().parent
+FRONTEND_DIR = BASE_DIR.parent / "frontend"
+
 app = FastAPI(title="HiNote")
-app.mount("/static", StaticFiles(directory="frontend/static"), name="static")
-templates = Jinja2Templates(directory="frontend/templates")
+app.mount(
+    "/static",
+    StaticFiles(directory=str(FRONTEND_DIR / "static")),
+    name="static",
+)
+templates = Jinja2Templates(directory=str(FRONTEND_DIR / "templates"))
 
 songs: List[Dict] = scan_music_directory(MUSIC_DIR)
 
