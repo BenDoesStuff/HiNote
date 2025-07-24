@@ -17,6 +17,13 @@ if not API_TOKEN:
 MUSIC_DIR = os.getenv("MUSIC_DIR", "music")
 
 BASE_DIR = Path(__file__).resolve().parent
+
+FRONTEND_DIR = BASE_DIR / "frontend"
+
+app = FastAPI(title="HiNote")
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR / "static"), name="static")
+templates = Jinja2Templates(directory=FRONTEND_DIR / "templates")
+
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
 
 app = FastAPI(title="HiNote")
