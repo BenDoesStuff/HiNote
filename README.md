@@ -11,10 +11,11 @@ HiNote is a lightweight local music streaming server and web-based player. It in
 
 ## Usage
 
-1. Install dependencies:
+1. Install dependencies and install HiNote locally (so the `hinote` module is available anywhere):
 
 ```bash
 pip install -r requirements.txt
+pip install -e .
 ```
 
 2. Place your music files under the `music/` directory or set the `MUSIC_DIR` environment variable.
@@ -22,7 +23,7 @@ pip install -r requirements.txt
 3. Start the server:
 
 ```bash
-HINOTE_TOKEN=yourtoken uvicorn hinote.main:app --reload
+HINOTE_TOKEN=yourtoken python -m hinote
 ```
 
 4. On your mobile device, navigate to `http://<server-ip>:8000`, enter the token, and start playing your music.
