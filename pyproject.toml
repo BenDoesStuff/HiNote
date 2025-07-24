@@ -17,6 +17,7 @@ dependencies = [
 [tool.setuptools.packages.find]
 include = ["hinote*"]
 
+
 [tool.setuptools]
 include-package-data = true
 
@@ -25,3 +26,4 @@ include-package-data = true
     "frontend/templates/*.html",
     "frontend/static/*",
 ]
+
