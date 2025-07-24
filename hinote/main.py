@@ -8,7 +8,11 @@ from typing import List, Dict
 from .indexer import scan_music_directory
 from .player import state
 
-API_TOKEN = os.getenv("HINOTE_TOKEN", "secret")
+API_TOKEN = os.getenv("HINOTE_TOKEN")
+if not API_TOKEN:
+    raise RuntimeError(
+        "HINOTE_TOKEN environment variable must be set before starting HiNote"
+    )
 MUSIC_DIR = os.getenv("MUSIC_DIR", "music")
 
 app = FastAPI(title="HiNote")
