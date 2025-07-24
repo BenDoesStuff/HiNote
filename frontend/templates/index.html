@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HiNote</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="login" class="overlay">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="password" id="token" placeholder="Token">
+            <button onclick="login()">Enter</button>
+        </div>
+    </div>
+    <div id="app" style="display:none">
+        <h1>HiNote</h1>
+        <div id="current"></div>
+        <audio id="player" controls></audio>
+        <ul id="song-list"></ul>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
