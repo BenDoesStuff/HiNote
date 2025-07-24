@@ -20,7 +20,7 @@ pip install -e .
 
 2. Place your music files under the `music/` directory or set the `MUSIC_DIR` environment variable.
 
-3. Start the server:
+3. Start the server (the `HINOTE_TOKEN` environment variable is **required**):
 
 ```bash
 HINOTE_TOKEN=yourtoken python -m hinote
