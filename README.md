@@ -20,13 +20,23 @@ pip install -e .
 
 2. Place your music files under the `music/` directory or set the `MUSIC_DIR` environment variable.
 
-3. Start the server:
+3. Start the server (the `HINOTE_TOKEN` environment variable is **required**):
 
 ```bash
 HINOTE_TOKEN=yourtoken python -m hinote
 ```
 
 4. On your mobile device, navigate to `http://<server-ip>:8000`, enter the token, and start playing your music.
+
+## Running tests
+
+After installing the dependencies and the package in editable mode you can run the automated tests with `pytest`:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+pytest
+```
 
 ## Notes
 
