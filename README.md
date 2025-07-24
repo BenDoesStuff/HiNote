@@ -28,6 +28,16 @@ HINOTE_TOKEN=yourtoken python -m hinote
 
 4. On your mobile device, navigate to `http://<server-ip>:8000`, enter the token, and start playing your music.
 
+## Running tests
+
+After installing the dependencies and the package in editable mode you can run the automated tests with `pytest`:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+pytest
+```
+
 ## Notes
 
 This is a minimal reference implementation. Advanced features like persistent state, output device selection, or casting are left as future improvements.

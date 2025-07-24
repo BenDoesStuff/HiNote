@@ -2,3 +2,4 @@ fastapi
 uvicorn[standard]
 mutagen
 Jinja2
+httpx
