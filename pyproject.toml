@@ -16,3 +16,12 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 include = ["hinote*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"hinote" = [
+    "frontend/templates/*.html",
+    "frontend/static/*",
+]
